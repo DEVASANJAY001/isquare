@@ -1,8 +1,8 @@
-import brand02 from "@/assets/brand/IMG-20260608-WA0002.jpg.asset.json";
-import brand03 from "@/assets/brand/IMG-20260608-WA0003.jpg.asset.json";
-import brand06 from "@/assets/brand/IMG-20260608-WA0006.jpg.asset.json";
-import brand08 from "@/assets/brand/IMG-20260608-WA0008.jpg.asset.json";
-import brand16 from "@/assets/brand/IMG-20260608-WA0016.jpg.asset.json";
+import brand02 from "@/assets/brand/IMG-20260608-WA0002.jpg";
+import brand03 from "@/assets/brand/IMG-20260608-WA0003.jpg";
+import brand06 from "@/assets/brand/IMG-20260608-WA0006.jpg";
+import brand08 from "@/assets/brand/IMG-20260608-WA0008.jpg";
+import brand16 from "@/assets/brand/IMG-20260608-WA0016.jpg";
 
 export type SubBranch = { name: string; area: string };
 export type Branch = {
@@ -27,7 +27,7 @@ export const branches: Branch[] = [
     address: "No. 14, 2nd Floor, GST Road, Tambaram, Chennai — 600045",
     phone: "97894 49019",
     email: "chennai@isquareconstruction.com",
-    image: brand08.url,
+    image: brand08,
     established: "2010",
     intro:
       "Our flagship Chennai head office leads project delivery across the metropolitan region with senior engineers, in-house architects and a dedicated quality team.",
@@ -48,7 +48,7 @@ export const branches: Branch[] = [
     address: "3rd Floor, Trichy Road, Ramanathapuram, Coimbatore — 641045",
     phone: "90031 33987",
     email: "coimbatore@isquareconstruction.com",
-    image: brand06.url,
+    image: brand06,
     established: "2015",
     intro:
       "The Coimbatore regional office serves the textile capital with industrial sheds, modern bungalows and gated community developments.",
@@ -67,7 +67,7 @@ export const branches: Branch[] = [
     address: "1st Floor, K.K. Nagar Main Road, Madurai — 625020",
     phone: "97894 49019",
     email: "madurai@isquareconstruction.com",
-    image: brand16.url,
+    image: brand16,
     established: "2018",
     intro:
       "The Madurai branch caters to temple-city residences, commercial complexes and educational institution builds.",
@@ -85,7 +85,7 @@ export const branches: Branch[] = [
     address: "2nd Floor, Cantonment Main Road, Trichy — 620001",
     phone: "90031 33987",
     email: "trichy@isquareconstruction.com",
-    image: brand03.url,
+    image: brand03,
     established: "2019",
     intro:
       "Our Trichy office delivers premium homes and commercial spaces with the same 250+ quality checks across central Tamil Nadu.",
@@ -103,7 +103,7 @@ export const branches: Branch[] = [
     address: "5th Floor, 100ft Road, Indiranagar, Bengaluru — 560038",
     phone: "97894 49019",
     email: "bengaluru@isquareconstruction.com",
-    image: brand02.url,
+    image: brand02,
     established: "2022",
     intro:
       "Our Bengaluru office extends iSquare's standards to Karnataka with a focus on tech-corridor villas and modern interiors.",

@@ -3,23 +3,23 @@ import villa from "@/assets/project-villa.jpg";
 import commercial from "@/assets/project-commercial.jpg";
 import interior from "@/assets/project-interior.jpg";
 
-import b08 from "@/assets/brand/IMG-20260608-WA0008.jpg.asset.json";
-import b22 from "@/assets/brand/IMG-20260608-WA0022.jpg.asset.json";
-import b16 from "@/assets/brand/IMG-20260608-WA0016.jpg.asset.json";
-import b06 from "@/assets/brand/IMG-20260608-WA0006.jpg.asset.json";
-import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
-import b03 from "@/assets/brand/IMG-20260608-WA0003.jpg.asset.json";
+import b08 from "@/assets/brand/IMG-20260608-WA0008.jpg";
+import b22 from "@/assets/brand/IMG-20260608-WA0022.jpg";
+import b16 from "@/assets/brand/IMG-20260608-WA0016.jpg";
+import b06 from "@/assets/brand/IMG-20260608-WA0006.jpg";
+import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg";
+import b03 from "@/assets/brand/IMG-20260608-WA0003.jpg";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader } from "@/components/PageHeader";
 import { usePageMeta } from "@/lib/usePageMeta";
 
 const projects = [
-  { img: b08.url, cat: "Residential", title: "Smart Luxury Villa", loc: "ECR, Chennai" },
-  { img: b06.url, cat: "Residential", title: "Modern Family Home", loc: "OMR, Chennai" },
-  { img: b22.url, cat: "Interiors", title: "Modern House Interiors", loc: "Anna Nagar" },
-  { img: b11.url, cat: "Commercial", title: "Township Development", loc: "Guindy, Chennai" },
-  { img: b03.url, cat: "Residential", title: "Generational Dream Home", loc: "Velachery" },
-  { img: b16.url, cat: "Residential", title: "Compact Premium Build", loc: "Porur" },
+  { img: b08, cat: "Residential", title: "Smart Luxury Villa", loc: "ECR, Chennai" },
+  { img: b06, cat: "Residential", title: "Modern Family Home", loc: "OMR, Chennai" },
+  { img: b22, cat: "Interiors", title: "Modern House Interiors", loc: "Anna Nagar" },
+  { img: b11, cat: "Commercial", title: "Township Development", loc: "Guindy, Chennai" },
+  { img: b03, cat: "Residential", title: "Generational Dream Home", loc: "Velachery" },
+  { img: b16, cat: "Residential", title: "Compact Premium Build", loc: "Porur" },
   { img: villa, cat: "Residential", title: "Coastal Modern Villa", loc: "ECR, Chennai" },
   { img: commercial, cat: "Commercial", title: "Glass Tower Office", loc: "Guindy, Chennai" },
   { img: interior, cat: "Interiors", title: "Luxury Living Suite", loc: "Anna Nagar" },
@@ -36,7 +36,7 @@ export default function Projects() {
   const filtered = filter === "All" ? projects : projects.filter((p) => p.cat === filter);
   return (
     <>
-      <PageHeader eyebrow="Portfolio" title="Projects that speak for themselves." image={b11.url} subtitle="Villas, commercial complexes and interiors delivered across South India." />
+      <PageHeader eyebrow="Portfolio" title="Projects that speak for themselves." image={b11} subtitle="Villas, commercial complexes and interiors delivered across South India." />
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap gap-2 mb-12">

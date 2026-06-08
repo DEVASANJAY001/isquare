@@ -6,14 +6,14 @@ import villa from "@/assets/project-villa.jpg";
 import commercial from "@/assets/project-commercial.jpg";
 import interior from "@/assets/project-interior.jpg";
 import about from "@/assets/about-team.jpg";
-import b02 from "@/assets/brand/IMG-20260608-WA0002.jpg.asset.json";
-import b03 from "@/assets/brand/IMG-20260608-WA0003.jpg.asset.json";
-import b07 from "@/assets/brand/IMG-20260608-WA0007.jpg.asset.json";
-import b08 from "@/assets/brand/IMG-20260608-WA0008.jpg.asset.json";
-import b09 from "@/assets/brand/IMG-20260608-WA0009.jpg.asset.json";
-import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
-import b12 from "@/assets/brand/IMG-20260608-WA0012.jpg.asset.json";
-import b22 from "@/assets/brand/IMG-20260608-WA0022.jpg.asset.json";
+import b02 from "@/assets/brand/IMG-20260608-WA0002.jpg";
+import b03 from "@/assets/brand/IMG-20260608-WA0003.jpg";
+import b07 from "@/assets/brand/IMG-20260608-WA0007.jpg";
+import b08 from "@/assets/brand/IMG-20260608-WA0008.jpg";
+import b09 from "@/assets/brand/IMG-20260608-WA0009.jpg";
+import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg";
+import b12 from "@/assets/brand/IMG-20260608-WA0012.jpg";
+import b22 from "@/assets/brand/IMG-20260608-WA0022.jpg";
 import { Reveal } from "@/components/Reveal";
 import { usePageMeta } from "@/lib/usePageMeta";
 
@@ -202,10 +202,10 @@ export default function Index() {
           </Reveal>
           <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: b02.url, t: "A Strong Future", d: "Custom plans, trusted contractors, smart tracking and transparent pricing." },
-              { img: b03.url, t: "Build For Generations", d: "Premium materials with 24/7 live construction monitoring." },
-              { img: b08.url, t: "Smart Technologies", d: "Starts ₹2000/sq.ft with 250+ quality checks and 10-year warranty." },
-              { img: b09.url, t: "Multi-Tasking Process", d: "Planning, foundation, framing, flooring, plumbing and finishing — managed in parallel." },
+              { img: b02, t: "A Strong Future", d: "Custom plans, trusted contractors, smart tracking and transparent pricing." },
+              { img: b03, t: "Build For Generations", d: "Premium materials with 24/7 live construction monitoring." },
+              { img: b08, t: "Smart Technologies", d: "Starts ₹2000/sq.ft with 250+ quality checks and 10-year warranty." },
+              { img: b09, t: "Multi-Tasking Process", d: "Planning, foundation, framing, flooring, plumbing and finishing — managed in parallel." },
             ].map((c, i) => (
               <Reveal key={c.t} delay={i * 80}>
                 <div className="group bg-background overflow-hidden border border-border hover:border-accent transition-colors h-full">
@@ -225,14 +225,14 @@ export default function Index() {
 
       {/* MATERIALS STRIP */}
       <section className="relative overflow-hidden">
-        <img src={b07.url} alt="Brand materials we use" className="w-full h-auto block" loading="lazy" />
+        <img src={b07} alt="Brand materials we use" className="w-full h-auto block" loading="lazy" />
       </section>
 
       {/* DOUBLE ADVANTAGE */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
           <Reveal>
-            <img src={b11.url} alt="iSquare Construction double advantage" className="w-full aspect-square object-cover" loading="lazy" />
+            <img src={b11} alt="iSquare Construction double advantage" className="w-full aspect-square object-cover" loading="lazy" />
           </Reveal>
           <Reveal delay={150}>
             <div>
@@ -273,7 +273,7 @@ export default function Index() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <img src={b12.url} alt="Follow iSquare Construction" className="w-full aspect-square object-cover" loading="lazy" />
+            <img src={b12} alt="Follow iSquare Construction" className="w-full aspect-square object-cover" loading="lazy" />
           </Reveal>
         </div>
       </section>
@@ -282,7 +282,7 @@ export default function Index() {
       <section className="py-24 md:py-32 bg-foreground text-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-12 items-center">
           <Reveal className="lg:col-span-3">
-            <img src={b22.url} alt="Modern house for sale by iSquare" className="w-full object-cover" loading="lazy" />
+            <img src={b22} alt="Modern house for sale by iSquare" className="w-full object-cover" loading="lazy" />
           </Reveal>
           <Reveal delay={120} className="lg:col-span-2">
             <div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, ArrowRight, Building2 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import hero from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
+import hero from "@/assets/brand/IMG-20260608-WA0011.jpg";
 import { branches } from "@/data/branches";
 import { usePageMeta } from "@/lib/usePageMeta";
 
@@ -17,7 +17,7 @@ export default function Branches() {
         eyebrow="Our Network"
         title="Branches & sub-branches across South India."
         subtitle="Five city head-offices and 22+ project hubs — local teams, central quality standards, single point of accountability."
-        image={hero.url}
+        image={hero}
       />
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-8 text-center">
