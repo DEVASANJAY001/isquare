@@ -1,18 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Home, Hammer, Sofa, Ruler, ClipboardCheck, Key, Wrench } from "lucide-react";
 import hero from "@/assets/hero-construction.jpg";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader } from "@/components/PageHeader";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Residential, Commercial & Turnkey Construction | iSquare" },
-      { name: "description", content: "Full-spectrum construction services: residential builds from ₹2000/sq.ft, commercial projects, interiors, renovations and turnkey solutions." },
-    ],
-  }),
-  component: ServicesPage,
-});
+import { usePageMeta } from "@/lib/usePageMeta";
 
 const services = [
   { icon: Home, title: "Residential Construction", desc: "Custom homes from ₹2000/sq.ft with 250+ quality checks and a 10-year structural warranty." },
@@ -25,7 +16,11 @@ const services = [
   { icon: Wrench, title: "Custom Building Solutions", desc: "Industrial sheds, farmhouses, villas and one-off architectural projects." },
 ];
 
-function ServicesPage() {
+export default function Services() {
+  usePageMeta(
+    "Services — Residential, Commercial & Turnkey Construction | iSquare",
+    "Full-spectrum construction services: residential builds from ₹2000/sq.ft, commercial projects, interiors, renovations and turnkey solutions."
+  );
   return (
     <>
       <PageHeader eyebrow="Services" title="End-to-end construction expertise." image={hero} />

@@ -1,19 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import about from "@/assets/about-team.jpg";
 import hero from "@/assets/hero-construction.jpg";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader } from "@/components/PageHeader";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About iSquare Construction — Our Story, Mission & Values" },
-      { name: "description", content: "Meet iSquare Construction — 15+ years of building trust through precision engineering, premium materials and transparent practices." },
-    ],
-  }),
-  component: AboutPage,
-});
+import { usePageMeta } from "@/lib/usePageMeta";
 
 const values = [
   { t: "Integrity First", d: "Transparent pricing, honest timelines, and no hidden charges. Ever." },
@@ -29,7 +19,11 @@ const timeline = [
   { y: "2026", t: "250+ Projects", d: "Trusted across Chennai with a 10-year structural warranty." },
 ];
 
-function AboutPage() {
+export default function About() {
+  usePageMeta(
+    "About iSquare Construction — Our Story, Mission & Values",
+    "Meet iSquare Construction — 15+ years of building trust through precision engineering, premium materials and transparent practices."
+  );
   return (
     <>
       <PageHeader eyebrow="About Us" title="Building trust, one structure at a time." image={hero} />

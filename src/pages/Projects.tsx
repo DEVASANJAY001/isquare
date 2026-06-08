@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import villa from "@/assets/project-villa.jpg";
 import commercial from "@/assets/project-commercial.jpg";
@@ -12,16 +11,7 @@ import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
 import b03 from "@/assets/brand/IMG-20260608-WA0003.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader } from "@/components/PageHeader";
-
-export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Projects — iSquare Construction Portfolio" },
-      { name: "description", content: "Explore residential villas, commercial buildings and luxury interiors delivered by iSquare Construction across Chennai." },
-    ],
-  }),
-  component: ProjectsPage,
-});
+import { usePageMeta } from "@/lib/usePageMeta";
 
 const projects = [
   { img: b08.url, cat: "Residential", title: "Smart Luxury Villa", loc: "ECR, Chennai" },
@@ -37,8 +27,11 @@ const projects = [
 
 const categories = ["All", "Residential", "Commercial", "Interiors"];
 
-
-function ProjectsPage() {
+export default function Projects() {
+  usePageMeta(
+    "Projects — iSquare Construction Portfolio",
+    "Explore residential villas, commercial buildings and luxury interiors delivered by iSquare Construction across Chennai."
+  );
   const [filter, setFilter] = useState("All");
   const filtered = filter === "All" ? projects : projects.filter((p) => p.cat === filter);
   return (

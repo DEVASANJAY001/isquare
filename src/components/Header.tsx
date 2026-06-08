@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
@@ -15,7 +15,7 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -26,7 +26,6 @@ export function Header() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
-  // Every page starts with a dark hero/PageHeader. When un-scrolled, use light text everywhere for legibility.
   const lightMode = !scrolled && !open;
 
   return (

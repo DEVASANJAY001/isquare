@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Building2, Home, Hammer, Sofa, Ruler, ClipboardCheck, ShieldCheck, Award, Star } from "lucide-react";
 import heroImg from "@/assets/hero-construction.jpg";
@@ -15,16 +15,7 @@ import b11 from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
 import b12 from "@/assets/brand/IMG-20260608-WA0012.jpg.asset.json";
 import b22 from "@/assets/brand/IMG-20260608-WA0022.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "iSquare Construction — Building Excellence. Creating Trust." },
-      { name: "description", content: "Premium construction services in Chennai. Residential, commercial, interiors and turnkey solutions starting from ₹2000/sq.ft with a 10-year warranty." },
-    ],
-  }),
-  component: Index,
-});
+import { usePageMeta } from "@/lib/usePageMeta";
 
 const services = [
   { icon: Home, title: "Residential Construction", desc: "Custom homes designed and built to your lifestyle, with premium finishes throughout." },
@@ -80,7 +71,11 @@ function Stat({ value, suffix, label }: { value: number; suffix?: string; label:
   );
 }
 
-function Index() {
+export default function Index() {
+  usePageMeta(
+    "iSquare Construction — Building Excellence. Creating Trust.",
+    "Premium construction services in Chennai. Residential, commercial, interiors and turnkey solutions starting from ₹2000/sq.ft with a 10-year warranty."
+  );
   return (
     <>
       {/* HERO */}
@@ -230,7 +225,7 @@ function Index() {
 
       {/* MATERIALS STRIP */}
       <section className="relative overflow-hidden">
-        <img src={b07.url} alt="Brand materials we use — KAG, ARS 550D, Asian Paints, Parryware, Ramco, Polycab" className="w-full h-auto block" loading="lazy" />
+        <img src={b07.url} alt="Brand materials we use" className="w-full h-auto block" loading="lazy" />
       </section>
 
       {/* DOUBLE ADVANTAGE */}
@@ -310,8 +305,6 @@ function Index() {
           </Reveal>
         </div>
       </section>
-
-
 
       {/* PROJECTS */}
       <section className="py-24 md:py-32 bg-foreground text-background">

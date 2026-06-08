@@ -1,38 +1,32 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Building2, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { branches, getBranch, type Branch } from "@/data/branches";
+import { branches, getBranch } from "@/data/branches";
+import { usePageMeta } from "@/lib/usePageMeta";
 
-export const Route = createFileRoute("/branches/$slug")({
-  loader: ({ params }) => {
-    const branch = getBranch(params.slug);
-    if (!branch) throw notFound();
-    return { branch };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.branch.city} Branch — iSquare Construction` },
-          { name: "description", content: `iSquare Construction ${loaderData.branch.city} office and its sub-branches. ${loaderData.branch.intro}` },
-        ]
-      : [],
-  }),
-  notFoundComponent: () => (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <div className="text-center">
-        <h1 className="text-5xl font-display font-bold">Branch not found</h1>
-        <Link to="/branches" className="mt-6 inline-flex items-center gap-2 text-accent font-semibold">
-          <ArrowLeft className="h-4 w-4" /> Back to all branches
-        </Link>
+export default function BranchDetail() {
+  const { slug } = useParams<{ slug: string }>();
+  const branch = slug ? getBranch(slug) : undefined;
+
+  usePageMeta(
+    branch ? `${branch.city} Branch — iSquare Construction` : "Branch not found — iSquare Construction",
+    branch ? `iSquare Construction ${branch.city} office and its sub-branches. ${branch.intro}` : undefined
+  );
+
+  if (!branch) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-6">
+        <div className="text-center">
+          <h1 className="text-5xl font-display font-bold">Branch not found</h1>
+          <Link to="/branches" className="mt-6 inline-flex items-center gap-2 text-accent font-semibold">
+            <ArrowLeft className="h-4 w-4" /> Back to all branches
+          </Link>
+        </div>
       </div>
-    </div>
-  ),
-  component: BranchDetail,
-});
+    );
+  }
 
-function BranchDetail() {
-  const { branch } = Route.useLoaderData() as { branch: Branch };
   const others = branches.filter((b) => b.slug !== branch.slug);
 
   return (
@@ -109,7 +103,7 @@ function BranchDetail() {
               <ul className="mt-5 space-y-3">
                 {others.map((o) => (
                   <li key={o.slug}>
-                    <Link to="/branches/$slug" params={{ slug: o.slug }} className="flex items-center justify-between text-sm hover:text-accent transition-colors">
+                    <Link to={`/branches/${o.slug}`} className="flex items-center justify-between text-sm hover:text-accent transition-colors">
                       <span className="font-semibold">{o.city}</span>
                       <span className="text-xs text-muted-foreground">{o.subBranches.length} sub-branches</span>
                     </Link>

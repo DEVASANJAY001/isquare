@@ -1,21 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, Phone, Clock, Send } from "lucide-react";
 import hero from "@/assets/hero-construction.jpg";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader } from "@/components/PageHeader";
+import { usePageMeta } from "@/lib/usePageMeta";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact iSquare Construction — Get a Free Quote" },
-      { name: "description", content: "Reach iSquare Construction for a free consultation and detailed quote within 24 hours. Call 97894 49019 or fill our enquiry form." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function Contact() {
+  usePageMeta(
+    "Contact iSquare Construction — Get a Free Quote",
+    "Reach iSquare Construction for a free consultation and detailed quote within 24 hours. Call 97894 49019 or fill our enquiry form."
+  );
   const [submitted, setSubmitted] = useState(false);
   return (
     <>

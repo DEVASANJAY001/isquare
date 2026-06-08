@@ -1,21 +1,16 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { MapPin, Phone, ArrowRight, Building2 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import hero from "@/assets/brand/IMG-20260608-WA0011.jpg.asset.json";
 import { branches } from "@/data/branches";
+import { usePageMeta } from "@/lib/usePageMeta";
 
-export const Route = createFileRoute("/branches")({
-  head: () => ({
-    meta: [
-      { title: "Our Branches — iSquare Construction Across Tamil Nadu" },
-      { name: "description", content: "iSquare Construction operates across Chennai, Coimbatore, Madurai, Trichy and Bengaluru with dedicated sub-branches and project offices in each city." },
-    ],
-  }),
-  component: BranchesPage,
-});
-
-function BranchesPage() {
+export default function Branches() {
+  usePageMeta(
+    "Our Branches — iSquare Construction Across Tamil Nadu",
+    "iSquare Construction operates across Chennai, Coimbatore, Madurai, Trichy and Bengaluru with dedicated sub-branches and project offices in each city."
+  );
   return (
     <>
       <PageHeader
@@ -76,8 +71,7 @@ function BranchesPage() {
                   </div>
 
                   <Link
-                    to="/branches/$slug"
-                    params={{ slug: b.slug }}
+                    to={`/branches/${b.slug}`}
                     className="mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-widest border-b-2 border-accent pb-1 hover:gap-5 transition-all"
                   >
                     View Branch <ArrowRight className="h-4 w-4" />
