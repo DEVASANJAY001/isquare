@@ -55,8 +55,11 @@ export function Footer() {
           <span>Crafted with precision. Built to last.</span>
           <span>
   Designed and developed By
-  <a href="https://davns.com" target="_blank" rel="noopener noreferrer">
-     Davns Industries
+  <a href="https://davns.com"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="color: #ffffff; text-decoration: underline; font-weight: 600;">
+    Davns Industries
   </a>
 </span>
         </div>
