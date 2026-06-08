@@ -54,11 +54,10 @@ export function Footer() {
           <span>© {new Date().getFullYear()} iSquare Construction. All Rights Reserved.</span>
           <span>Crafted with precision. Built to last.</span>
           <span>
-  Designed and developed By Davns Industries (
+  Designed and developed By
   <a href="https://davns.com" target="_blank" rel="noopener noreferrer">
     davns.com
   </a>
-  )
 </span>
         </div>
       </div>
