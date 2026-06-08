@@ -56,7 +56,7 @@ export function Footer() {
           <span>
   Designed and developed By
   <a href="https://davns.com" target="_blank" rel="noopener noreferrer">
-    davns.com
+     Davns Industries
   </a>
 </span>
         </div>
