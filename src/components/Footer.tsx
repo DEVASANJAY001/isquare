@@ -53,6 +53,13 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50">
           <span>© {new Date().getFullYear()} iSquare Construction. All Rights Reserved.</span>
           <span>Crafted with precision. Built to last.</span>
+          <span>
+  Designed and developed By Davns Industries (
+  <a href="https://davns.com" target="_blank" rel="noopener noreferrer">
+    davns.com
+  </a>
+  )
+</span>
         </div>
       </div>
     </footer>
